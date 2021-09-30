@@ -92,6 +92,6 @@ Find Password does not work if the website
 [Generate]: images/generate.png
 [Get]: images/getPas.png
 [Error1]: images/errorPas
-[Error2]: images/passwordNotMatching
+[Error2]: images/passwordNotMatching.png
 [Error3]: images/wrongWebsite.png
 
