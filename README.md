@@ -81,7 +81,7 @@ Create password does not work if the password is not equal to each other.
 
 ![Usage errors][Error3]
 
-Find Password does not work if the website 
+Find Password does not work if the website does not exist
 
 
 
