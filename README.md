@@ -31,7 +31,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-A program that will generate, cipher, save, store, find and then decipher your passwords. 
+A password application that can generate cipher, decipher and store passwords.
+
+I started this project because I wanted to get a feeling on how to create a project with multiple different components from the ground up. From working on the project I got insight in the important things when planning and executing a project.
+
+Its main purpose when I started was to be able to store passwords. But the longer I worked on the application the more features I added. The most interesting thing was working with the GUI's this was all new to me it was exciting and fun to learn about them.
 
 <!-- GETTING STARTED -->
 ## Getting Started
