@@ -16,7 +16,7 @@ import home.password.Password;
 
 
 
-public class getPasswordGUI extends createPasGUI implements ActionListener {
+public class getPasswordGUI extends CreatePasGUI implements ActionListener {
 	
 	
 	public getPasswordGUI() {
@@ -34,10 +34,10 @@ public class getPasswordGUI extends createPasGUI implements ActionListener {
 		try {
 			if(checkDuplicate()) {
 				Password p = createFile.findPassword(getFieldInfo(getWebsiteField()));
-				displayMessage(p.getPassword());
+				displayMessage(p.getPassword(), true);
 			}
 			else {
-				displayMessage("Wrong website");
+				displayMessage("Wrong website", false);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

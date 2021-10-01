@@ -16,11 +16,11 @@ import home.KeyChain.createFile;
 import home.password.Cipher;
 import home.password.Password;
 
-public class generatePasGUI extends createPasGUI implements ActionListener  {
+public class GeneratePasGUI extends CreatePasGUI implements ActionListener  {
 	private static JFormattedTextField lengthField;
 	private static JLabel lengthLabel;
 	
-	public generatePasGUI() {
+	public GeneratePasGUI() {
 		super();
 
 	}
@@ -31,11 +31,11 @@ public class generatePasGUI extends createPasGUI implements ActionListener  {
 	public void compile() {
 		try {
 			if(checkDuplicate()) {
-				displayMessage("Password to this website already exists");
+				displayMessage("Password to this website already exists", false);
 				return;
 			}
 			Password p = new Password(getFieldInfo(getWebsiteField()), Integer.parseInt(getFieldInfo(getLengthField())));
-			displayMessage(p.getPassword());
+			displayMessage(p.getPassword(), true);
 			Cipher.encrypt(p, Cipher.randEncryption());
 			createFile.writeFile(p);
 		} catch (Exception e) {

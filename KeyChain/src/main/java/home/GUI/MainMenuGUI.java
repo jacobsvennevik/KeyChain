@@ -20,12 +20,12 @@ import javax.swing.border.EtchedBorder;
 
 
 
-public class FinalGUI implements ActionListener {
+public class MainMenuGUI implements ActionListener {
 	
 	private JButton createPasswordButton, generatePasswordButton, getPasswordButton;
 	private JFrame frame;
 
-	public FinalGUI() {
+	public MainMenuGUI() {
 		frame = setupFrame("Main menu");
 
 		JPanel buttons = setupButtons();
@@ -66,7 +66,7 @@ public class FinalGUI implements ActionListener {
 	
 	
     public static void main(String[] args) {
-		new FinalGUI();
+		new MainMenuGUI();
 	}
 
 
@@ -74,15 +74,17 @@ public class FinalGUI implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == createPasswordButton) {
-			new createPasGUI();
+			new CreatePasGUI();
 			
 		}
 		if(e.getSource() == generatePasswordButton) {
-			new generatePasGUI();
+			new GeneratePasGUI();
 		}
 		if(e.getSource() == getPasswordButton ) {
 			new getPasswordGUI();
 		}
+		frame.dispose();
+		
 		
 		
 	}

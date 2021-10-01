@@ -26,7 +26,7 @@ import home.KeyChain.createFile;
 import home.password.Cipher;
 import home.password.Password;
 
-public class createPasGUI extends JPanel implements ActionListener {
+public class CreatePasGUI extends JPanel implements ActionListener {
 	
 	private static JFrame frame; 
 	private JPanel labelPanel, fieldPanel, downPanel, buttonPanel;
@@ -38,11 +38,11 @@ public class createPasGUI extends JPanel implements ActionListener {
 	private static JFormattedTextField websiteField;
 	private JPasswordField pasField1, pasField2;
 	
-	public createPasGUI() {	
+	public CreatePasGUI() {	
 			super(new BorderLayout());
 			
 			statusMessage = new JLabel();
-			statusLabel = new JLabel("status: ");
+			statusLabel = new JLabel("Password: ");
 			headingLabel = new JLabel();
 			
 			setHeadingLabel(headingLabel, "Create password");
@@ -79,7 +79,7 @@ public class createPasGUI extends JPanel implements ActionListener {
 			
 			setup();
 			
-			frame = new JFrame("Key chain");
+			frame = new JFrame("KeyChain");
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 			frame.add(this);
@@ -138,7 +138,7 @@ public class createPasGUI extends JPanel implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == returnButton) {
-			new FinalGUI();
+			new MainMenuGUI();
 		}
 		if(e.getSource() == sendButton) {
 			compile();
@@ -152,15 +152,16 @@ public class createPasGUI extends JPanel implements ActionListener {
 	public void compile() {
 		try {
 			if (checkDuplicate()) {
-				displayMessage("Password to this website already exists");
+				displayMessage("Password to this website already exists", false);
+				
 				return;
 		}
 			if(checkSamePas(pasField1, pasField2)) {
 				createPas(getPasswodInfo(pasField1), getFieldInfo(websiteField));
-				displayMessage("password successfully created");
+				displayMessage("password successfully created", true);
 			}
 			else {
-				displayMessage("Passwords not matching, try again");
+				displayMessage("Passwords not matching, try again", true);
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -199,8 +200,8 @@ public class createPasGUI extends JPanel implements ActionListener {
 
 
 
-	public static void displayMessage(String message) {
-		statusLabel.setVisible(true);
+	public static void displayMessage(String message, Boolean v) {
+		statusLabel.setVisible(v);
 		getStatusMessage().setText(message);
 	}
 
@@ -267,7 +268,7 @@ public class createPasGUI extends JPanel implements ActionListener {
 
 
 	public static void setWebsiteField(JFormattedTextField websiteField) {
-		createPasGUI.websiteField = websiteField;
+		CreatePasGUI.websiteField = websiteField;
 	}
 
 
@@ -288,6 +289,6 @@ public class createPasGUI extends JPanel implements ActionListener {
 
 
 	public static void setHeadingLabel(JLabel headingLabel, String string) {
-		createPasGUI.headingLabel.setText(string);
+		CreatePasGUI.headingLabel.setText(string);
 	}
 }
